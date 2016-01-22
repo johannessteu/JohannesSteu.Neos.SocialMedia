@@ -1,0 +1,7 @@
+'JohannesSteu.Neos.SocialMedia:FbNewsStream':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'i18n'
+    icon: icon-facebook
+    inlineEditable: true
+    group: 'socialmedia'

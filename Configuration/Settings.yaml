@@ -1,9 +1,28 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'JohannesSteu.Neos.SocialMedia': TRUE
+    nodeTypes:
+      groups:
+        socialmedia:
+          position: '180'
+          label: 'Social media'
+    userInterface:
+      translation:
+        autoInclude:
+          'JohannesSteu.Neos.SocialMedia': ['NodeTypes/*']
+  TypoScript:
+    defaultContext:
+      'Facebook': 'JohannesSteu\Neos\SocialMedia\Helper\FacebookHelper'
+
 JohannesSteu:
   Neos:
     SocialMedia:
       facebook:
-        app_id:
-        app_secret:
+        app_id: ''
+        app_secret: ''
+        default_graph_version: 'v2.5'
+        default_access_token: ''
       twitter:
       instagram:
-      

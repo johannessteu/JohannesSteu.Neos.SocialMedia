@@ -1,0 +1,6 @@
+prototype(JohannesSteu.Neos.SocialMedia:FbNewsStream) < prototype(TYPO3.Neos:Content){
+
+    stream = ${Facebook.newsStream(Configuration.Configuration.setting('TYPO3.Flow.core.context'))}
+
+
+}
