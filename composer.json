@@ -1,0 +1,14 @@
+{
+    "name": "johannessteu/neos-socialmedia",
+    "type": "typo3-flow-plugin",
+    "description": "Neos CMS Plugin that adds new twitter, facebook and instagram content elements",
+    "require": {
+        "facebook/php-sdk-v4" : "~5.0",
+        "typo3/neos": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "JohannesSteu\\Neos\\SocialMedia": "Classes"
+        }
+    }
+}
