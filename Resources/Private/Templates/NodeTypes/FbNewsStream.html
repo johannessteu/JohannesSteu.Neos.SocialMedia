@@ -1,1 +1,7 @@
-<f:debug>{stream}</f:debug>
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<div {attributes -> f:format.raw()}>
+    <f:for each="{streamposts}" as="streampost">
+        <ts:render path="post" context="{post: streampost}" />
+    </f:for>
+</div>

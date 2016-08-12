@@ -6,6 +6,19 @@
         <source>News stream</source>
         <target xml:lang="de">News stream</target>
       </trans-unit>
+      <trans-unit id="groups.fb" xml:space="preserve">
+        <source>FB Stream</source>
+        <target xml:lang="de">FB Stream</target>
+      </trans-unit>
+
+      <trans-unit id="properties.pageid" xml:space="preserve">
+        <source>Page ID</source>
+        <target xml:lang="de">Page/User ID</target>
+      </trans-unit>
+      <trans-unit id="properties.limit" xml:space="preserve">
+        <source>limit</source>
+        <target xml:lang="de">Limit</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

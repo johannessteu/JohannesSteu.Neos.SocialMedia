@@ -1,0 +1,14 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<div {attributes -> f:format.raw()}>
+
+    <div class="{class}__image">
+        <picture>
+            <img src="{post.picture}" />
+            <figcaption>{post.caption}</figcaption>
+        </picture>
+    </div>
+    <p class="{class}__image">{post.created_time ->f:format.date()}</p>
+    <p class="{class}__message">{post.message}</p>
+    <a href="{post.link}">LINK</a>
+</div>

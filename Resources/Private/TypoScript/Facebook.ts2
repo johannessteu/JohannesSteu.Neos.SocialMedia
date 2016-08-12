@@ -1,6 +1,31 @@
 prototype(JohannesSteu.Neos.SocialMedia:FbNewsStream) < prototype(TYPO3.Neos:Content){
+    templatePath = 'resource://JohannesSteu.Neos.SocialMedia/Private/Templates/NodeTypes/FbNewsStream.html'
 
-    stream = ${Facebook.newsStream(Configuration.Configuration.setting('TYPO3.Flow.core.context'))}
+    pageID = ${q(node).property('pageid')}
+    limit = ${q(node).property('limit')}
 
+    streamposts = ${Facebook.newsStream(this.pageID, this.limit)}
+    post = JohannesSteu.Neos.SocialMedia:FbNewsStreamItem
 
+    attributes.class = "jst-fbstream"
+
+    @cache {
+        mode = 'cached'
+        maximumLifetime = '3600'
+        entryIdentifier {
+            pageID = ${q(node).property('pageid')}
+            limit = ${q(node).property('limit')}
+        }
+        entryTags {
+            1 = ${'Node_' + node.identifier}
+        }
+    }
+}
+
+prototype(JohannesSteu.Neos.SocialMedia:FbNewsStreamItem) < prototype(TYPO3.Neos:Content){
+    templatePath = 'resource://JohannesSteu.Neos.SocialMedia/Private/Templates/NodeTypes/FbNewsStreamItem.html'
+    post = ${post}
+
+    @context.class = "jst-fbstreampost"
+    attributes.class = ${class}
 }

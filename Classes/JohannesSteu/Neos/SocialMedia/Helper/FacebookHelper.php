@@ -29,22 +29,16 @@ class FacebookHelper implements ProtectedContextAwareInterface
     /**
      *
      */
-    public function newsStream()
+    public function newsStream($pageid, $limit = 10)
     {
-        $fb = new Facebook($this->configuration);
-        $posts = $fb->get('/me/feed')->getGraphEdge();
+        $configuration = $this->configuration;
+        $fields = $this->configuration['fields'];
+        unset($this->configuration['fields']);
 
-        $streamPosts = [];
+        $fb = new \Facebook\Facebook($this->configuration);
 
-        foreach ($posts as $post) {
-            /** @var \Facebook\GraphNodes\GraphNode $post */
-            $postId = $post->getField('id');
-
-            $thePost = $fb->get('/'.$postId.'?fields=picture,description,caption,created_time,full_picture,link,source,message');
-            $streamPosts[] = $thePost->getGraphNode()->asArray();
-        }
-
-        return $streamPosts;
+        $posts = $fb->get(sprintf('/%s/posts?fields=%s&limit=%s', $pageid, $fields, $limit))->getGraphEdge();
+        return $posts->asArray();
     }
 
     /**

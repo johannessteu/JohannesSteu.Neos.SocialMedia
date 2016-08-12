@@ -5,3 +5,21 @@
     icon: icon-facebook
     inlineEditable: true
     group: 'socialmedia'
+    inspector:
+      groups:
+        fb:
+          label: i18n
+  properties:
+    pageid:
+      type: string
+      ui:
+        label: i18n
+        inspector:
+          group: 'fb'
+    limit:
+      type: integer
+      defaultValue: '10'
+      ui:
+        label: i18n
+        inspector:
+          group: 'fb'
